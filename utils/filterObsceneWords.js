@@ -1,15 +1,14 @@
-// A simple list of obscene words (extend this list as needed)
-   const obsceneWords = [
-    "ควย", "เหี้ย", "สัส", "ห่า", "เชี่ย", "มึง", "กู", "เย็ด", "หี", 
-    "ไอ้สัตว์", "ไอ้สัส", "ไอ้เหี้ย", "ไอ้ควาย", "ไอ้ฟาย", "แม่มึงตาย", 
-    "พ่อมึงตาย", "ส้นตีน", "ตีน"
-]
+//ใส่ คำพวกนี้ ใน description เพื่อดูผลลัพธ์
+const badWords = [
+    "badword1", "badword2", "fuck"
+];
 
-function filterObsceneWords(text) {
-    return obsceneWords.reduce((filteredText, word) => {
+//กรองคำหยาบ
+function filterBadWords(text) {
+    return badWords.reduce((filteredText, word) => {
         const regex = new RegExp(word, 'gi');
         return filteredText.replace(regex, '***');
     }, text);
 }
 
-module.exports = { filterObsceneWords };
+module.exports = { filterBadWords };
